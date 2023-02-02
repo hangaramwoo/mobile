@@ -1,0 +1,210 @@
+@charset "utf-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    color: #333;
+    line-height: 1;
+    font-family: 'Noto Sans KR';
+    margin-bottom: 60px;
+}
+
+.inner {
+    /* width: calc(100% - 40px); */
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.title {
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 🐶 .header */
+
+header {
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+header nav ul {
+    display: flex;
+    margin-top: 15px;
+}
+
+header nav ul li {
+    margin-right: 15px;
+    font-weight: 450;
+}
+
+/* 🐺 .main_visual */
+
+.main_visual {
+    width: 100%;
+    height: 295px;
+    border-radius: 0 0 70px 70px;
+    box-shadow: 0 4px 45px #ccc;
+    position: relative;
+}
+
+.main_visual figure {
+    width: calc(100% - 40px);
+    height: 110px;
+    border-radius: 70px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.main_visual figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 🐱 .cont01 */
+
+.cont01 {
+    padding-top: 60px;
+}
+
+.cont01 .list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cont01 .list .item {
+    width: calc(100% / 4 - 10px);
+}
+
+/* 이미지에 height 값 주면 화면 크기에 따라서 이미지 비율이 변하고(높이 고정), 주지 않으면 일정하게 비율이 고정됨. 이 부분은 디자이너 및 클라이언트와 상의해서 정할 수 있음*/
+
+.cont01 .list .item figure {
+    width: 100%;
+    height: 160px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cont01 .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cont01 .list .item p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* 🦁 .cont02 */
+
+.cont02 {
+    padding-top: 50px;
+}
+
+.cont02 .list {
+    width: 100%;
+    height: 160px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.cont02 .list figure {
+    border-radius: 10px;
+    width: 102px;
+    height: 124px;
+    overflow: hidden;
+    margin-right: 11px;
+}
+
+.cont02 .list figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cont02 .list .info p {
+    font-size: 14px;
+    margin: 3px 0 5px;
+}
+
+.cont02 .list .info div span {
+    font-size: 14px;
+}
+
+/* 🐯 .bottom_menu */
+
+.bottom_menu {
+    width: 100%;
+    height: 55px;
+    background-color: #fff;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.bottom_menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* li가 가진 고유 높이값 때문에 align-items가 안 먹힘. ul 높이값을 ..bottom_menu와 같게 해주면 적용됨 */
+    padding: 0 40px;
+}
+
+.bottom_menu ul li a {
+    display: flex;
+}
+
+
+/* 뷰포트 1280px 이하일 때 스타일 적용 */
+
+@media screen and (max-width: 1280px) {
+    .inner {
+        width: calc(100% - 40px);
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .cont01 .list .item {
+        width: calc(100% / 3 - 10px);
+    }
+    .cont01 .list .item:nth-child(4) {
+        display: none;
+    }
+}
